@@ -1,0 +1,122 @@
+[
+    {
+        "id": "impresora-01",
+        "titulo": "Impresora RedPOS Q80K 80mm",
+        "imagen":"./img/Impresoras/A1.jpg",
+        "categoria": {
+            "nombre": "Impresoras",
+            "id": "impresoras"
+        },
+        "precio": 340
+    },
+    {
+        "id": "impresora-02",
+        "titulo": "Impresora RedPOS E803 80mm",
+        "imagen":"./img/Impresoras/A2.jpg",
+        "categoria": {
+            "nombre": "Impresoras",
+            "id": "impresoras"
+        },
+        "precio": 350
+    },
+    {
+        "id": "impresora-03",
+        "titulo": "Impresora RedPOS E802 80mm",
+        "imagen":"./img/Impresoras/A3.jpg",
+        "categoria": {
+            "nombre": "Impresoras",
+            "id": "impresoras"
+        },
+        "precio": 370
+    },
+    {
+        "id": "impresora-04",
+        "titulo": "Impresora RedP 8001 80mm",
+        "imagen":"./img/Impresoras/A6.jpg",
+        "categoria": {
+            "nombre": "Impresoras",
+            "id": "impresoras"
+        },
+        "precio": 280
+    },
+    {
+        "id": "papel-01",
+        "titulo": "Papel termico 80 x 80mm UNI",
+        "imagen":"./img/papel termico/P1.jpg",
+        "categoria": {
+            "nombre": "Papel Termico",
+            "id": "papel"
+        },
+        "precio": 8
+    },
+    {
+        "id": "papel-02",
+        "titulo": "Papel termico 80x80mm Pack 5 UNI",
+        "imagen":"./img/papel termico/P2.jpg",
+        "categoria": {
+            "nombre": "Papel Termico",
+            "id": "papel"
+        },
+        "precio": 35
+    },
+    {
+        "id": "papel-03",
+        "titulo": "Papel termico 80x80 caja 20 UNI",
+        "imagen":"./img/papel termico/P3.jpg",
+        "categoria": {
+            "nombre": "Papel Termico",
+            "id": "papel"
+        },
+        "precio": 100
+    },
+    {
+        "id": "papel-04",
+        "titulo": "Papel termico 80x40mm caja 80 UNI",
+        "imagen":"./img/papel termico/P4.jpg",
+        "categoria": {
+            "nombre": "Papel Termico",
+            "id": "papel"
+        },
+        "precio": 200
+    },
+    {
+        "id": "lector-01",
+        "titulo": "Lector de codigo RedS6",
+        "imagen":"./img/lectores/L1.jpg",
+        "categoria": {
+            "nombre": "Lectores",
+            "id": "lector"
+        },
+        "precio": 150
+    },
+    {
+        "id": "lector-02",
+        "titulo": "Lector de codigo Red1228BC",
+        "imagen":"./img/lectores/L2.jpg",
+        "categoria": {
+            "nombre": "Lectores",
+            "id": "lector"
+        },
+        "precio": 200
+    },
+    {
+        "id": "lector-03",
+        "titulo": "Lector de codigo RedDS7500",
+        "imagen":"./img/lectores/L3.jpg",
+        "categoria": {
+            "nombre": "Lectores",
+            "id": "lector"
+        },
+        "precio": 350
+    },
+    {
+        "id": "lector-04",
+        "titulo": "Lector de codigo Red1203",
+        "imagen":"./img/lectores/L4.jpg",
+        "categoria": {
+            "nombre": "Lectores",
+            "id": "lector"
+        },
+        "precio": 600
+    }
+]
