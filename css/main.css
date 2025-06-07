@@ -392,3 +392,108 @@ main {
     }
  
  }
+ .toast {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: #2499c7;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    animation: slide-in 0.5s ease;
+}
+
+.toast.hidden {
+    display: none;
+}
+
+.toast button {
+    background-color: white;
+    color: #2499c7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header-principal {
+  background-color: var(--clr-main);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-principal .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-carrito {
+  color: white;
+  font-size: 1.5rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: white;
+  color: var(--clr-main);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.acciones-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.open-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.header-carrito {
+  color: white;
+  font-size: 1.6rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: white;
+  color: var(--clr-main);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
