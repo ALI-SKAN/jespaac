@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Detalle del producto | JESPAAC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <style>
+    /* Utilidad por si no está en main.css */
+    .hidden { display: none; }
+
+    /* Fondo general celeste */
+    body{
+      margin:0;
+      font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      background:#e6f6ff;
+      color:#13313a;
+    }
+
+    /* Encabezado superior */
+    .detalle-header{background:#1fa2d6; padding:12px 20px;}
+    .detalle-header-contenido{max-width:1100px; margin:0 auto;}
+    .detalle-logo{color:#fff; font-weight:800; font-size:1.5rem; margin:0; text-align:center;}
+
+    /* Contenedor de la página */
+    .detalle-wrap{max-width:1100px; margin:16px auto; padding:0 16px;}
+
+    /* Botón Volver */
+    .btn-volver{
+      display:inline-flex; align-items:center; gap:6px;
+      background:#fff; color:#0a7ca7; text-decoration:none;
+      border:1px solid #bfe8fa; border-radius:10px;
+      padding:8px 14px; font-weight:600;
+      box-shadow:0 2px 8px rgba(10,124,167,.12);
+    }
+    .btn-volver:hover{background:#f5fcff;}
+
+    /* Tarjeta blanca del detalle */
+    .detalle-card{
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      padding:24px;
+      margin-top:16px;
+    }
+
+    /* Grid interno del detalle */
+    .detalle-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+    .detalle-img{width:100%; height:auto; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.08);}
+
+    /* Tipos y listas */
+    .precio{font-size:24px; font-weight:800; margin:8px 0 12px; color:#0a7ca7;}
+    .specs{list-style:none; padding:0; margin:10px 0;}
+    .specs li{padding:6px 0; border-bottom:1px dashed #e1edf3;}
+
+    /* Botones primarios */
+    .btn{border:0; padding:12px 16px; border-radius:10px; font-weight:600; cursor:pointer; background:#0a7ca7; color:#fff;}
+
+    /* ===== Toast bonito ===== */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(8px);
+      z-index: 9999;
+      transition: all .25s ease;
+    }
+    .toast.hidden { opacity: 0; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    .toast-content{
+      display:flex; align-items:center; gap:12px;
+      background:#ffffff; color:#13313a;
+      border:1px solid #cfeffc;
+      border-radius:14px;
+      padding:12px 14px;
+      box-shadow:0 12px 30px rgba(0,0,0,.12);
+      min-width:280px; max-width:95vw;
+    }
+    .toast-content svg { fill:#0a7ca7; flex:0 0 auto; }
+    .toast-actions { margin-left:auto; display:flex; gap:8px; }
+    .btn-sec{
+      background:transparent; border:1px solid #d7ebf8; color:#0a7ca7;
+      padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600;
+    }
+    .btn-sec:hover{ background:#f5fcff; }
+
+    /* ===== Mobile first tuning ===== */
+    @media (max-width: 900px){
+      .detalle-logo{ font-size: 1.25rem; }
+      .detalle-wrap{ padding: 0 12px; }
+      .detalle-card{ padding: 16px; }
+      .detalle-grid{ grid-template-columns: 1fr; gap: 16px; }
+      .detalle-img{ border-radius: 10px; }
+      .precio{ font-size: 20px; margin: 6px 0 10px; }
+      .btn{ width: 100%; height: 44px; border-radius: 12px; }
+      .btn-volver{ margin-bottom: 10px; }
+    }
+
+    /* ===== Barra inferior (CTA) para móvil ===== */
+    .cta-mobile{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(6px);
+      border-top: 1px solid #e6eef2;
+      z-index: 9998;
+      box-shadow: 0 -8px 24px rgba(0,0,0,.08);
+    }
+    .cta-row{ display:flex; align-items:center; gap:12px; }
+    .cta-price{ font-weight: 800; font-size: 18px; color:#0a7ca7; }
+    .btn-cta{ flex: 1 0 auto; height: 44px; border-radius: 12px; }
+
+    /* Ocultar CTA en pantallas grandes */
+    @media (min-width: 901px){
+      .cta-mobile{ display: none; }
+    }
+
+    /* Mueve el toast arriba de la barra móvil si está visible */
+    body.has-cta .toast{
+      bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="detalle-header">
+    <div class="detalle-header-contenido">
+      <h1 class="detalle-logo">JESPAAC</h1>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <div class="detalle-wrap">
+    <a class="btn-volver" href="index.html">← Volver</a>
+
+    <!-- Tarjeta blanca donde se inyecta el contenido -->
+    <main id="detalle" class="detalle-card detalle-grid">
+      <!-- JS (producto.js) inyecta aquí la imagen y la info -->
+    </main>
+  </div>
+
+  <!-- Toast elegante -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite">
+    <div class="toast-content">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.1-6.1l6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4 3.6 3.6z"/>
+      </svg>
+      <span id="toast-text">Agregado al carrito</span>
+      <div class="toast-actions">
+        <button id="toast-action" class="btn">Ver carrito</button>
+        <button id="toast-close" class="btn-sec" aria-label="Cerrar">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra móvil inferior (solo en pantallas pequeñas) -->
+  <div id="cta-mobile" class="cta-mobile hidden">
+    <div class="cta-row">
+      <div class="cta-price">S/<span id="cta-precio">0</span></div>
+      <button id="cta-agregar" class="btn btn-cta">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <script src="./js/producto.js"></script>
+</body>
+</html>
+
+
+

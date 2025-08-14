@@ -1,122 +1,198 @@
 [
-    {
-        "id": "impresora-01",
-        "titulo": "Impresora RedPOS Q80K 80mm",
-        "imagen":"./img/Impresoras/A1.jpg",
-        "categoria": {
-            "nombre": "Impresoras",
-            "id": "impresoras"
-        },
-        "precio": 340
-    },
-    {
-        "id": "impresora-02",
-        "titulo": "Impresora RedPOS E803 80mm",
-        "imagen":"./img/Impresoras/A2.jpg",
-        "categoria": {
-            "nombre": "Impresoras",
-            "id": "impresoras"
-        },
-        "precio": 350
-    },
-    {
-        "id": "impresora-03",
-        "titulo": "Impresora RedPOS E802 80mm",
-        "imagen":"./img/Impresoras/A3.jpg",
-        "categoria": {
-            "nombre": "Impresoras",
-            "id": "impresoras"
-        },
-        "precio": 370
-    },
-    {
-        "id": "impresora-04",
-        "titulo": "Impresora RedP 8001 80mm",
-        "imagen":"./img/Impresoras/A6.jpg",
-        "categoria": {
-            "nombre": "Impresoras",
-            "id": "impresoras"
-        },
-        "precio": 280
-    },
-    {
-        "id": "papel-01",
-        "titulo": "Papel termico 80 x 80mm UNI",
-        "imagen":"./img/papel termico/P1.jpg",
-        "categoria": {
-            "nombre": "Papel Termico",
-            "id": "papel"
-        },
-        "precio": 8
-    },
-    {
-        "id": "papel-02",
-        "titulo": "Papel termico 80x80mm Pack 5 UNI",
-        "imagen":"./img/papel termico/P2.jpg",
-        "categoria": {
-            "nombre": "Papel Termico",
-            "id": "papel"
-        },
-        "precio": 35
-    },
-    {
-        "id": "papel-03",
-        "titulo": "Papel termico 80x80 caja 20 UNI",
-        "imagen":"./img/papel termico/P3.jpg",
-        "categoria": {
-            "nombre": "Papel Termico",
-            "id": "papel"
-        },
-        "precio": 100
-    },
-    {
-        "id": "papel-04",
-        "titulo": "Papel termico 80x40mm caja 80 UNI",
-        "imagen":"./img/papel termico/P4.jpg",
-        "categoria": {
-            "nombre": "Papel Termico",
-            "id": "papel"
-        },
-        "precio": 200
-    },
-    {
-        "id": "lector-01",
-        "titulo": "Lector de codigo RedS6",
-        "imagen":"./img/lectores/L1.jpg",
-        "categoria": {
-            "nombre": "Lectores",
-            "id": "lector"
-        },
-        "precio": 150
-    },
-    {
-        "id": "lector-02",
-        "titulo": "Lector de codigo Red1228BC",
-        "imagen":"./img/lectores/L2.jpg",
-        "categoria": {
-            "nombre": "Lectores",
-            "id": "lector"
-        },
-        "precio": 200
-    },
-    {
-        "id": "lector-03",
-        "titulo": "Lector de codigo RedDS7500",
-        "imagen":"./img/lectores/L3.jpg",
-        "categoria": {
-            "nombre": "Lectores",
-            "id": "lector"
-        },
-        "precio": 350
-    },
-    {
-        "id": "lector-04",
-        "titulo": "Lector de codigo Red1203",
-        "imagen":"./img/lectores/L4.jpg",
-        "categoria": {
-            "nombre": "Lectores",
-            "id": "lector"
-        },
-        "precio": 600
+  {
+    "id": "impresora-01",
+    "titulo": "Impresora RedPOS Q80K 80mm",
+    "imagen": "./img/Impresoras/A1.jpg",
+    "categoria": { "nombre": "Impresoras", "id": "impresoras" },
+    "precio": 340,
+    "descripcion": "Ticketera térmica de 80 mm con corte automático, ideal para caja y cocina.",
+    "conectividad": ["USB", "Ethernet", "RJ12 (gaveta)"],
+    "especificaciones": {
+      "Tecnología": "Térmica directa",
+      "Ancho de papel": "80 mm",
+      "Velocidad de impresión": "250 mm/s",
+      "Cortador": "Automático",
+      "Vida del cabezal": "≈100 km",
+      "Compatibilidad": "Windows / Android",
+      "Notas": "Diseño anti-grasa para cocina"
     }
+  },
+  {
+    "id": "impresora-02",
+    "titulo": "Impresora RedPOS E803 80mm",
+    "imagen": "./img/Impresoras/A2.jpg",
+    "categoria": { "nombre": "Impresoras", "id": "impresoras" },
+    "precio": 350,
+    "descripcion": "Impresora térmica 80 mm de alto rendimiento para punto de venta.",
+    "conectividad": ["USB", "Ethernet (según variante)", "Bluetooth (según variante)"],
+    "especificaciones": {
+      "Tecnología": "Térmica directa",
+      "Ancho de papel": "79.5 ± 0.5 mm",
+      "Resolución": "203 dpi (576 puntos/línea)",
+      "Velocidad de impresión": "hasta 250 mm/s",
+      "Soporte códigos": "1D y 2D",
+      "Funciones": "Anti-aceite/polvo, soporte mural",
+      "Interfaz opcional": "USB / USB+LAN / USB+BT / USB+BT+LAN"
+    }
+  },
+  {
+    "id": "impresora-03",
+    "titulo": "Impresora RedPOS E802 80mm",
+    "imagen": "./img/Impresoras/A3.jpg",
+    "categoria": { "nombre": "Impresoras", "id": "impresoras" },
+    "precio": 370,
+    "descripcion": "Modelo 80 mm rápido y robusto para alto tráfico en mostrador.",
+    "conectividad": ["USB", "LAN", "Serial (según variante)"],
+    "especificaciones": {
+      "Tecnología": "Térmica directa",
+      "Ancho de papel": "80 mm",
+      "Velocidad de impresión": "hasta 260 mm/s",
+      "Funciones": "Anti-aceite/polvo; soporte mural",
+      "Soporte códigos": "1D y 2D",
+      "Vida útil": "Cortador ≈1 millón de cortes (típ.)"
+    }
+  },
+  {
+    "id": "impresora-04",
+    "titulo": "Impresora RedP 8001 80mm (Portátil)",
+    "imagen": "./img/Impresoras/A6.jpg",
+    "categoria": { "nombre": "Impresoras", "id": "impresoras" },
+    "precio": 280,
+    "descripcion": "Impresora térmica portátil 80 mm para reparto/entregas con batería.",
+    "conectividad": ["Bluetooth", "USB"],
+    "especificaciones": {
+      "Tecnología": "Térmica directa",
+      "Ancho de papel": "80 mm (efectivo ~72 mm)",
+      "Resolución": "576 puntos/línea (típ.)",
+      "Velocidad de impresión": "Alta (modelo portátil)",
+      "Alimentación": "Batería Li-ion recargable",
+      "Uso": "Móvil, recibos en ruta"
+    }
+  },
+
+  {
+    "id": "papel-01",
+    "titulo": "Papel térmico 80 x 80mm UNI",
+    "imagen": "./img/papel termico/P1.jpg",
+    "categoria": { "nombre": "Papel Termico", "id": "papel" },
+    "precio": 8,
+    "descripcion": "Rollo térmico 80×80 mm, núcleo 12 mm, para impresoras de 80 mm.",
+    "conectividad": [],
+    "especificaciones": {
+      "Dimensiones": "80 × 80 mm",
+      "Núcleo": "12 mm (estándar)",
+      "Tipo de papel": "Térmico",
+      "Compatibilidad": "Impresoras térmicas 80 mm"
+    }
+  },
+  {
+    "id": "papel-02",
+    "titulo": "Papel térmico 80x80mm Pack 5 UNI",
+    "imagen": "./img/papel termico/P2.jpg",
+    "categoria": { "nombre": "Papel Termico", "id": "papel" },
+    "precio": 35,
+    "descripcion": "Pack de 5 rollos térmicos 80×80 mm, núcleo 12 mm.",
+    "conectividad": [],
+    "especificaciones": {
+      "Dimensiones": "80 × 80 mm",
+      "Núcleo": "12 mm",
+      "Tipo de papel": "Térmico",
+      "Contenido": "5 unidades"
+    }
+  },
+  {
+    "id": "papel-03",
+    "titulo": "Papel térmico 80x80 caja 20 UNI",
+    "imagen": "./img/papel termico/P3.jpg",
+    "categoria": { "nombre": "Papel Termico", "id": "papel" },
+    "precio": 100,
+    "descripcion": "Caja de 20 rollos térmicos 80×80 mm para alto consumo.",
+    "conectividad": [],
+    "especificaciones": {
+      "Dimensiones": "80 × 80 mm",
+      "Núcleo": "12 mm",
+      "Tipo de papel": "Térmico",
+      "Contenido": "20 unidades"
+    }
+  },
+  {
+    "id": "papel-04",
+    "titulo": "Papel térmico 80x40mm caja 80 UNI",
+    "imagen": "./img/papel termico/P4.jpg",
+    "categoria": { "nombre": "Papel Termico", "id": "papel" },
+    "precio": 200,
+    "descripcion": "Caja de 80 rollos térmicos 80×40 mm para recibos cortos.",
+    "conectividad": [],
+    "especificaciones": {
+      "Dimensiones": "80 × 40 mm",
+      "Núcleo": "12 mm",
+      "Tipo de papel": "Térmico",
+      "Contenido": "80 unidades"
+    }
+  },
+
+  {
+    "id": "lector-01",
+    "titulo": "Lector de código RedS6",
+    "imagen": "./img/lectores/L1.jpg",
+    "categoria": { "nombre": "Lectores", "id": "lector" },
+    "precio": 150,
+    "descripcion": "Escáner inalámbrico 1D tipo CCD de alto rendimiento (2.4G).",
+    "conectividad": ["2.4G (dongle USB)"],
+    "especificaciones": {
+      "Tecnología de escaneo": "CCD (1D)",
+      "Velocidad de escaneo": "≈300 escaneos/seg",
+      "Resolución mínima": "≈3 mil (1D)",
+      "Modos": "Disparo y continuo",
+      "Uso": "Retail, inventarios"
+    }
+  },
+  {
+    "id": "lector-02",
+    "titulo": "Lector de código Red1228BC",
+    "imagen": "./img/lectores/L2.jpg",
+    "categoria": { "nombre": "Lectores", "id": "lector" },
+    "precio": 200,
+    "descripcion": "Escáner 1D con triple modo: Bluetooth, 2.4G y USB cableado.",
+    "conectividad": ["Bluetooth (HID/SPP/BLE)", "2.4G (dongle USB)", "USB"],
+    "especificaciones": {
+      "Tecnología de escaneo": "CCD (1D)",
+      "Alcance inalámbrico": "≈10 m Bluetooth / hasta 100 m 2.4G (sin obstáculos)",
+      "Batería": "≈2000 mAh",
+      "Lectura": "Códigos impresos y en pantalla",
+      "Compatibilidad": "Windows / macOS / Linux / iOS / Android"
+    }
+  },
+  {
+    "id": "lector-03",
+    "titulo": "Lector de código RedDS7500",
+    "imagen": "./img/lectores/L3.jpg",
+    "categoria": { "nombre": "Lectores", "id": "lector" },
+    "precio": 350,
+    "descripcion": "Escáner 2D manos libres (auto-sensing) para mostrador.",
+    "conectividad": ["Bluetooth (según kit)", "2.4G (según kit)", "USB"],
+    "especificaciones": {
+      "Tecnología de escaneo": "CMOS 2D (640×480, global shutter)",
+      "Matriz soportada": "QR, Data Matrix, PDF417 + 1D",
+      "Modo": "Auto-sensing (manos libres)",
+      "Aplicación": "Retail, almacén",
+      "Iluminación": "LED blanco; apuntador rojo"
+    }
+  },
+  {
+    "id": "lector-04",
+    "titulo": "Lector de código Red1203",
+    "imagen": "./img/lectores/L4.jpg",
+    "categoria": { "nombre": "Lectores", "id": "lector" },
+    "precio": 600,
+    "descripcion": "Lector láser 1D de propósito general para mostrador.",
+    "conectividad": ["USB"],
+    "especificaciones": {
+      "Tecnología de escaneo": "Láser (1D)",
+      "Uso": "Retail y comercios pequeños",
+      "Características": "Ergonómico y duradero",
+      "Modos": "Disparo/continuo",
+      "Compatibilidad": "Windows / macOS / Linux"
+    }
+  }
 ]

@@ -447,7 +447,7 @@ main {
 }
 
 .header-carrito {
-  color: white;
+  color:red;
   font-size: 1.5rem;
   position: relative;
   text-decoration: none;
@@ -497,3 +497,148 @@ main {
   padding: 2px 6px;
   border-radius: 50%;
 }
+
+/* Efecto “seleccionado” al pasar el mouse en el menú izquierdo */
+.boton-menu {
+  position: relative; /* necesario para los ::before/::after */
+  transition: background-color .0s ease, color .0s ease, box-shadow .0s ease;
+}
+
+.boton-menu:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* Curvitas blancas del lado derecho también en hover (igual que .active) */
+.boton-menu:hover::before,
+.boton-menu:hover::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  right: 0;
+  background-color: transparent;
+}
+
+.boton-menu:hover::before {
+  bottom: 100%;
+  border-bottom-right-radius: .5rem;
+  box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+.boton-menu:hover::after {
+  top: 100%;
+  border-top-right-radius: .5rem;
+  box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+/* Accesible con teclado */
+.boton-menu:focus-visible {
+  outline: none;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* En mobile ocultamos las curvitas, igual que con .active */
+@media screen and (max-width: 600px){
+  .boton-menu:hover::before,
+  .boton-menu:hover::after {
+    display: none;
+  }
+}
+
+/* Letra un poco más grande en el menú izquierdo */
+.boton-menu {
+  font-size: 0.95rem; /* antes estaba en .75rem */
+}
+
+.boton-menu i {
+  font-size: 1.1rem; /* agranda también los íconos */
+}
+
+/* ===== Buscador lateral ===== */
+.buscador {
+  margin: 1rem 1.2rem 1.2rem 0;
+  background: var(--clr-white);
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .8rem;
+  border-radius: 1rem;
+}
+
+.buscador i { color: var(--clr-main); }
+
+.buscador input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: .95rem;
+  color: var(--clr-main);
+  background: transparent;
+}
+
+.btn-limpiar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--clr-main);
+}
+
+/* Mensaje “sin resultados” */
+.sin-resultados {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: .5rem;
+  padding: 3rem 1rem;
+  color: var(--clr-main);
+  border: 2px dashed var(--clr-gray);
+  border-radius: 1rem;
+}
+.sin-resultados .emoji {
+  font-size: 2rem;
+  line-height: 1;
+  opacity: .9;
+}
+
+/* Responsive: que el buscador no estorbe en mobile */
+@media screen and (max-width: 600px) {
+  .buscador {
+    margin: 1rem;
+  }
+}
+
+.logo-img {
+  max-width: 180px; /* ajusta el tamaño del logo */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centra el logo */
+}
+
+h1 {color:red};
+
+.detalle-header {
+  background-color: #1fa2d6; /* Celeste */
+  padding: 12px 20px;
+}
+
+.detalle-header-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.detalle-logo {
+  color: red;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
