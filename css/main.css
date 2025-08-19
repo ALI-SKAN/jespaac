@@ -639,6 +639,153 @@ h1 {color:red};
   font-weight: bold;
   margin: 0;
 }
+/* ===== FOOTER ===== */
+:root{
+  --footer-bg: #0f7ea4;    /* tono acorde a tu header */
+  --footer-bg-2:#0c6b8d;
+  --footer-text:#ffffff;
+  --footer-muted:#d9f4ff;
+}
+
+.site-footer{
+  background: linear-gradient(180deg, var(--footer-bg), var(--footer-bg-2));
+  color: var(--footer-text);
+  margin-top: 10px;
+}
+
+.site-footer .footer-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 8px;
+  display: flex;               /* en vez de grid, usa flex */
+  justify-content: space-between;
+  align-items: flex-start;     /* todos alineados arriba */
+  gap: 18px;
+}
+
+.footer-col h4{
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.footer-address{
+  text-align: left;
+  white-space: pre-line;   /* respeta saltos de línea si quisieras usarlos */
+  line-height: 1;
+}
+
+.footer-about p{
+  margin: 0;
+  color: var(--footer-muted);
+}
+
+.footer-social ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.social-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--footer-text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+
+.social-link:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.16);
+  opacity: .95;
+}
+
+.icon{
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.18);
+  text-align: center;
+  padding: 12px 16px 16px;
+  font-size: .9rem;
+  color: var(--footer-muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .site-footer .footer-wrap{
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+}
+
+@media (max-width: 640px){
+  .site-footer .footer-wrap{
+    grid-template-columns: 1fr; /* 1 columna (stack) */
+    gap: 18px;
+  }
+  .footer-col{
+    text-align: left; /* dirección sigue a la izquierda en móvil */
+  }
+  .social-link{ width: 100%; } /* toques fáciles en móvil */
+}
+.footer-address h4 {
+  font-size: 1.4rem;   /* aquí ajusta el tamaño */
+}
+/* Altura de la barra superior (ajústala si tu header es más alto/bajo) */
+:root { --topbar-h: 64px; }
+
+/* Asegura espacio para el logo del menú móvil */
+.wrapper aside header {
+  padding: 12px 16px;
+  overflow: visible;
+}
+
+/* Logo dentro del aside: que NO se recorte */
+.logo-img{
+  display: block;
+  max-height: 120px;     /* súbelo/bájalo hasta que se vea completo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Si tu aside es off-canvas y está fijo, que empiece debajo del header */
+.wrapper aside{
+  top: var(--topbar-h);                    /* evita que el header lo tape */
+  height: calc(100vh - var(--topbar-h));   /* alto exacto visible */
+}
+
+/* Overlay que permite cerrar tocando fuera */
+.menu-overlay{
+  position: fixed;
+  left: 0; right: 0;
+  top: var(--topbar-h);                    /* que no tape el header */
+  bottom: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 1000;
+}
+
+/* Clase que indicará "menú abierto" en el <body> */
+body.menu-open .menu-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Si tu aside se muestra/oculta con transform, controla con .menu-open */
+body.menu-open .wrapper aside{
+  transform: translateX(0); /* asegúrate que tu estado cerrado tenga translateX(-100%) */
+}
 
 
 
