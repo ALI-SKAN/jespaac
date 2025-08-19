@@ -1,0 +1,860 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --clr-main:#2499c7;
+    --clr-main-light:#e2e2e2;
+    --clr-white: #ffffff;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper { 
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--clr-main);
+}
+aside {
+    padding: 2rem;
+    padding-right: 0;
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.boton-menu {
+    background-color: transparent;
+    border: 0;
+    color: var(--clr-white);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    padding: 1.2rem;
+    font-size: .75rem;
+    width: 100%;
+}
+
+.boton-menu.active::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+.boton-menu.active::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+.boton-menu.active {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+
+.boton-menu > i.bi-hand-index-thumb-fill,
+.boton-menu > i.bi-hand-index-thumb {
+    transform: rotateZ(90deg);
+}
+
+.boton-carrito {
+    margin-top: 2rem;
+}
+
+.numerito {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+.boton-carrito.active .numerito {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+.texto-footer {
+    color: var(--clr-main-light);
+    font-size: .85rem;
+}
+main {
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.titulo-principal {
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+
+.contenedor-productos { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.producto-imagen {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.producto-detalles {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.producto-titulo {
+    font-size: 1rem;
+}
+
+.producto-agregar {
+    border: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: backgroud-color .2s, color .2s;
+}
+
+.producto-agregar:hover {
+    background-color: var(--clr-main);   
+    color: var(--clr-white);
+}
+
+/**CARRITO**/
+
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.carrito-vacio,
+.carrito-comprado {
+    color: var(--clr-main);   
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    padding: .5rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto-imagen {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+.carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar {
+    border: 0;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.carrito-acciones-derecha {
+    display: flex;
+
+}
+
+.carrito-acciones-total {
+    display: flex;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+
+.carrito-acciones-comprar {
+    border: 0;
+    background-color: var(--clr-main);
+    padding: 1rem;
+    color: var(--clr-white);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.disabled {
+    display: none;
+}
+
+.header-mobile {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+.disabled {
+    display: none;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media screen and ( max-width: 850px) {
+    
+   .contenedor-productos {
+    grid-template-columns: 1fr 1fr 1fr;
+   }
+
+}
+
+@media screen and ( max-width: 675px) {
+    
+    .contenedor-productos {
+     grid-template-columns: 1fr 1fr;
+    }
+ 
+ }
+
+@media screen and (max-width: 600px ){
+
+   .wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   }
+   aside {
+    position: fixed;
+    z-index: 9;
+    background-color: var(--clr-main);
+    left: 0;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+   }
+
+   .aside-visible {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+   }
+
+   .boton-menu.active::before,
+   .boton-menu.active::after {
+    display: none;
+   }
+
+   main {
+    margin: 1rem;
+    margin-top: 0;
+    padding: 2rem;
+   }
+
+
+   .header-mobile {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .header-mobile .logo{
+    color: var(--clr-gray);
+   }
+
+   .open-menu, .close-menu {
+    background-color: transparent;
+    color: var(--clr-gray);
+    border: 0;
+    font-size: 2rem;
+    cursor: pointer;
+   }
+
+   .close-menu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+   }
+
+   .carrito-producto {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: .5rem;
+   }
+
+   .carrito-producto-subtotal {
+    display: none;
+   }
+
+   .carrito-acciones {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+   }
+}
+
+@media screen and ( max-width: 400px) {
+    
+    .contenedor-productos {
+     grid-template-columns: 1fr;
+    }
+ 
+ }
+ .toast {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: #2499c7;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    animation: slide-in 0.5s ease;
+}
+
+.toast.hidden {
+    display: none;
+}
+
+.toast button {
+    background-color: white;
+    color: #2499c7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header-principal {
+  background-color: var(--clr-main);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-principal .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-carrito {
+  color:red;
+  font-size: 1.5rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: white;
+  color: var(--clr-main);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.acciones-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.open-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.header-carrito {
+  color: white;
+  font-size: 1.6rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: white;
+  color: var(--clr-main);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Efecto “seleccionado” al pasar el mouse en el menú izquierdo */
+.boton-menu {
+  position: relative; /* necesario para los ::before/::after */
+  transition: background-color .0s ease, color .0s ease, box-shadow .0s ease;
+}
+
+.boton-menu:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* Curvitas blancas del lado derecho también en hover (igual que .active) */
+.boton-menu:hover::before,
+.boton-menu:hover::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  right: 0;
+  background-color: transparent;
+}
+
+.boton-menu:hover::before {
+  bottom: 100%;
+  border-bottom-right-radius: .5rem;
+  box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+.boton-menu:hover::after {
+  top: 100%;
+  border-top-right-radius: .5rem;
+  box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+/* Accesible con teclado */
+.boton-menu:focus-visible {
+  outline: none;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* En mobile ocultamos las curvitas, igual que con .active */
+@media screen and (max-width: 600px){
+  .boton-menu:hover::before,
+  .boton-menu:hover::after {
+    display: none;
+  }
+}
+
+/* Letra un poco más grande en el menú izquierdo */
+.boton-menu {
+  font-size: 0.95rem; /* antes estaba en .75rem */
+}
+
+.boton-menu i {
+  font-size: 1.1rem; /* agranda también los íconos */
+}
+
+/* ===== Buscador lateral ===== */
+.buscador {
+  margin: 1rem 1.2rem 1.2rem 0;
+  background: var(--clr-white);
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .8rem;
+  border-radius: 1rem;
+}
+
+.buscador i { color: var(--clr-main); }
+
+.buscador input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: .95rem;
+  color: var(--clr-main);
+  background: transparent;
+}
+
+.btn-limpiar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--clr-main);
+}
+
+/* Mensaje “sin resultados” */
+.sin-resultados {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: .5rem;
+  padding: 3rem 1rem;
+  color: var(--clr-main);
+  border: 2px dashed var(--clr-gray);
+  border-radius: 1rem;
+}
+.sin-resultados .emoji {
+  font-size: 2rem;
+  line-height: 1;
+  opacity: .9;
+}
+
+/* Responsive: que el buscador no estorbe en mobile */
+@media screen and (max-width: 600px) {
+  .buscador {
+    margin: 1rem;
+  }
+}
+
+.logo-img {
+  max-width: 180px; /* ajusta el tamaño del logo */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centra el logo */
+}
+
+h1 {color:red};
+
+.detalle-header {
+  background-color: #1fa2d6; /* Celeste */
+  padding: 12px 20px;
+}
+
+.detalle-header-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.detalle-logo {
+  color: red;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+/* ===== FOOTER ===== */
+:root{
+  --footer-bg: #0f7ea4;    /* tono acorde a tu header */
+  --footer-bg-2:#0c6b8d;
+  --footer-text:#ffffff;
+  --footer-muted:#d9f4ff;
+}
+
+.site-footer{
+  background: linear-gradient(180deg, var(--footer-bg), var(--footer-bg-2));
+  color: var(--footer-text);
+  margin-top: 10px;
+}
+
+.site-footer .footer-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 8px;
+  display: flex;               /* en vez de grid, usa flex */
+  justify-content: space-between;
+  align-items: flex-start;     /* todos alineados arriba */
+  gap: 18px;
+}
+
+.footer-col h4{
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.footer-address{
+  text-align: left;
+  white-space: pre-line;   /* respeta saltos de línea si quisieras usarlos */
+  line-height: 1;
+}
+
+.footer-about p{
+  margin: 0;
+  color: var(--footer-muted);
+}
+
+.footer-social ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.social-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--footer-text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+
+.social-link:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.16);
+  opacity: .95;
+}
+
+.icon{
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.18);
+  text-align: center;
+  padding: 12px 16px 16px;
+  font-size: .9rem;
+  color: var(--footer-muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .site-footer .footer-wrap{
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+}
+
+@media (max-width: 640px){
+  .site-footer .footer-wrap{
+    grid-template-columns: 1fr; /* 1 columna (stack) */
+    gap: 18px;
+  }
+  .footer-col{
+    text-align: left; /* dirección sigue a la izquierda en móvil */
+  }
+  .social-link{ width: 100%; } /* toques fáciles en móvil */
+}
+.footer-address h4 {
+  font-size: 1.4rem;   /* aquí ajusta el tamaño */
+}
+/* Altura de la barra superior (ajústala si tu header es más alto/bajo) */
+:root { --topbar-h: 64px; }
+
+/* Asegura espacio para el logo del menú móvil */
+.wrapper aside header {
+  padding: 12px 16px;
+  overflow: visible;
+}
+
+/* Logo dentro del aside: que NO se recorte */
+.logo-img{
+  display: block;
+  max-height: 220px;     /* súbelo/bájalo hasta que se vea completo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Si tu aside es off-canvas y está fijo, que empiece debajo del header */
+.wrapper aside{
+  top: var(--topbar-h);                    /* evita que el header lo tape */
+  height: calc(100vh - var(--topbar-h));   /* alto exacto visible */
+}
+
+/* Overlay que permite cerrar tocando fuera */
+.menu-overlay{
+  position: fixed;
+  left: 0; right: 0;
+  top: var(--topbar-h);                    /* que no tape el header */
+  bottom: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 1000;
+}
+
+/* Clase que indicará "menú abierto" en el <body> */
+body.menu-open .menu-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Si tu aside se muestra/oculta con transform, controla con .menu-open */
+body.menu-open .wrapper aside{
+  transform: translateX(0); /* asegúrate que tu estado cerrado tenga translateX(-100%) */
+}
+/* 1) Alinear el contenido del aside arriba y dar un pequeño gap */
+aside{
+  justify-content: flex-start;   /* antes: space-between */
+  padding-top: 1rem;             /* baja el espacio superior (antes: 2rem) */
+  gap: .75rem;
+}
+
+/* 2) Compactar el bloque del logo para que no empuje al menú */
+.logo-img{
+  max-height: 220px;             /* antes 220px; ajusta si quieres 120–150 */
+}
+@media (max-width: 900px){
+  .logo-img{ max-height: 110px; }
+}
+@media (max-width: 600px){
+  .logo-img{ max-height: 90px; }
+}
+
+/* 3) Reducir espacio entre buscador y la lista */
+.buscador{
+  margin: .5rem .8rem .6rem 0;   /* antes: 1rem 1.2rem 1.2rem 0 */
+}
+
+/* 4) Asegurar que la lista arranque sin margen extra */
+nav .menu{ margin-top: 0; }
+
+/* 5) Botones más “bajitos” (menos alto cada item) */
+.boton-menu{
+  padding: .85rem 1rem;          /* antes 1.2rem */
+}
+nav .menu > li{ margin: 5px 0; } /* separaciones más chicas */
+
+/* === Cantidad (+/-) en carrito === */
+.carrito-cantidad{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.qty-btn{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--clr-main);
+  background: #fff;
+  color: var(--clr-main);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.qty-num{
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--clr-main);
+}
+.qty-btn:active{ transform: scale(.96); }
+
+/* Poner "Cantidad" arriba del control +/- */
+.carrito-producto-cantidad{
+  display: flex;
+  flex-direction: column;   /* apila verticalmente */
+  align-items: center;  /* alinea a la izquierda */
+  gap: .35rem;
+  min-width: 120px;              /* pequeño espacio entre label y control */
+}
+
+.carrito-producto-cantidad small{
+  display: block;           /* fuerza la línea propia del label */
+}
+
+
