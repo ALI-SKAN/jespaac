@@ -752,7 +752,7 @@ h1 {color:red};
 /* Logo dentro del aside: que NO se recorte */
 .logo-img{
   display: block;
-  max-height: 120px;     /* súbelo/bájalo hasta que se vea completo */
+  max-height: 220px;     /* súbelo/bájalo hasta que se vea completo */
   width: auto;
   object-fit: contain;
 }
@@ -786,6 +786,73 @@ body.menu-open .menu-overlay{
 body.menu-open .wrapper aside{
   transform: translateX(0); /* asegúrate que tu estado cerrado tenga translateX(-100%) */
 }
+/* 1) Alinear el contenido del aside arriba y dar un pequeño gap */
+aside{
+  justify-content: flex-start;   /* antes: space-between */
+  padding-top: 1rem;             /* baja el espacio superior (antes: 2rem) */
+  gap: .75rem;
+}
 
+/* 2) Compactar el bloque del logo para que no empuje al menú */
+.logo-img{
+  max-height: 220px;             /* antes 220px; ajusta si quieres 120–150 */
+}
+@media (max-width: 900px){
+  .logo-img{ max-height: 110px; }
+}
+@media (max-width: 600px){
+  .logo-img{ max-height: 90px; }
+}
 
+/* 3) Reducir espacio entre buscador y la lista */
+.buscador{
+  margin: .5rem .8rem .6rem 0;   /* antes: 1rem 1.2rem 1.2rem 0 */
+}
 
+/* 4) Asegurar que la lista arranque sin margen extra */
+nav .menu{ margin-top: 0; }
+
+/* 5) Botones más “bajitos” (menos alto cada item) */
+.boton-menu{
+  padding: .85rem 1rem;          /* antes 1.2rem */
+}
+nav .menu > li{ margin: 5px 0; } /* separaciones más chicas */
+
+/* === Cantidad (+/-) en carrito === */
+.carrito-cantidad{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.qty-btn{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--clr-main);
+  background: #fff;
+  color: var(--clr-main);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.qty-num{
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--clr-main);
+}
+.qty-btn:active{ transform: scale(.96); }
+
+/* Poner "Cantidad" arriba del control +/- */
+.carrito-producto-cantidad{
+  display: flex;
+  flex-direction: column;   /* apila verticalmente */
+  align-items: center;  /* alinea a la izquierda */
+  gap: .35rem;
+  min-width: 120px;              /* pequeño espacio entre label y control */
+}
+
+.carrito-producto-cantidad small{
+  display: block;           /* fuerza la línea propia del label */
+}
